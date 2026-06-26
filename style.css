@@ -1,0 +1,783 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #2d3f61;
+    color: #e0e4ea;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: rgba(11, 15, 25, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 54px;
+    font-weight: bold;
+    color: #0c8fb7f6;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #bbcee9;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #45bbee;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 10% 20px;
+    background: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.05), transparent 50%);
+    margin-top: 60px;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 4.8rem;
+    color: #d7e3f0;
+    margin: 5px 0 15px 0;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero h5 {
+    color: #9befd0;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+.hero-image-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-circle {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 4px solid #d0ecf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+    overflow: hidden;
+    background-color: #111827;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: #38bdf8;
+    color: #0b0f19;
+}
+
+.btn-primary:hover {
+    background-color: #0ea5e9;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f8fafc;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #38bdf8;
+}
+
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px; /* Adds a nice space between GitHub and LinkedIn */
+}
+
+.social-icons a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #38bdf8;
+}
+
+.section {
+    padding: 80px 10% 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #f8fafc;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #38bdf8;
+    bottom: -5px;
+    left: 0;
+}
+
+.card {
+    background-color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    line-height: 1.7;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.skills-grid h3 {
+    color: #f8fafc;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.timeline {
+    position: relative;
+    border-left: 2px solid rgba(56, 189, 248, 0.3);
+    padding-left: 20px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #38bdf8;
+    border-radius: 50%;
+    left: -27px;
+    top: 5px;
+    box-shadow: 0 0 10px #38bdf8;
+}
+
+.timeline-card h3 {
+    color: #f8fafc;
+}
+
+.timeline-card h4 {
+    color: #34d399;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.timeline-date {
+    font-size: 13px;
+    color: #64748b;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.timeline-card ul {
+    padding-left: 20px;
+}
+
+.timeline-card li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* Projects Section Grid Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns in a row */
+    gap: 25px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.project-card {
+    background-color: #1b2946; /* Dark background for card */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.4); /* Sky blue border on hover */
+}
+
+/* Image styling inside card */
+.project-image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Info styling inside card */
+.project-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-info h3 {
+    font-size: 18px;
+    color: #f8fafc;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+/* Tags (Languages/Tech) */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.project-tags span {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Footer Link with GitHub Icon */
+.project-footer-link {
+    margin-top: auto;
+}
+
+.github-icon-link {
+    color: #94a3b8;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+.github-icon-link:hover {
+    color: #38bdf8;
+}
+
+/* Responsive for Mobile Devices */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile phones */
+    }
+}
+
+/* Professional Footer Styling */
+footer {
+    padding: 30px 10%;
+    background-color: #0d1117; /* Keeps your current dark background color */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright-text {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-icons a {
+    color: #64748b;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-icons a:hover {
+    color: #38bdf8; /* Turns bright blue on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .cta-group {
+        justify-content: center;
+    }
+    .profile-circle {
+        width: 260px;
+        height: 260px;
+    }
+}
+/* Theme Toggle Button Styling */
+.theme-btn {
+    background: none;
+    border: none;
+    color: #38bdf8;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.theme-btn:hover {
+    transform: scale(1.2);
+}
+/* Contact Section Styling */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contact-info-card h3, .contact-form-card h3 {
+    color: #f8fafc;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.contact-desc {
+    color: #94a3b8;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-box {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.contact-item h4 {
+    color: #f8fafc;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.contact-item p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* Form Fields */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    color: #cbd5e1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    background-color: #1f2937;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 6px;
+    color: #f8fafc;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #38bdf8;
+}
+
+.form-submit-btn {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* Contact Follow Me Styles */
+.contact-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 25px 0 20px 0;
+}
+
+.contact-follow h4 {
+    color: #f8fafc;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.follow-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.follow-icons a {
+    color: #94a3b8;
+    font-size: 22px; /* Makes the icons beautifully sized */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.follow-icons a:hover {
+    color: #38bdf8;
+    transform: translateY(-3px); /* Subtle lift up effect on hover */
+}
+
+
+/* ==========================================
+   LIGHT MODE STYLES
+   ========================================== */
+body.light-mode {
+    background-color: #d8dee5;
+    color: #05080e;
+}
+
+body.light-mode .navbar {
+    background-color: rgba(141, 194, 248, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .nav-links a {
+    color: #282c33;
+}
+
+body.light-mode .nav-links a:hover {
+    color: #014e75;
+}
+
+body.light-mode .hero {
+    background: radial-gradient(circle at 80% 20%, rgba(2, 132, 199, 0.05), transparent 50%);
+}
+
+body.light-mode .hero h1 {
+    color: #0f172a;
+}
+
+body.light-mode .subtitle {
+    color: #475569;
+}
+
+body.light-mode .card, 
+body.light-mode .project-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .section-title {
+    color: #0f172a;
+}
+
+body.light-mode .timeline-card h3 {
+    color: #0f172a;
+}
+
+body.light-mode .project-info h3 {
+    color: #0f172a;
+}
+
+body.light-mode .project-tags span {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+body.light-mode footer {
+    background-color: #f1f5f9;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .copyright-text,
+body.light-mode .footer-icons a {
+    color: #94a3b8;
+}
+
+body.light-mode .footer-icons a:hover {
+    color: #0284c7;
+}
+/* Fixes for Light Mode Contrast Issues */
+body.light-mode .hero h5 {
+    color: #059669; /* Darker green for "Hello, I'm" */
+}
+
+body.light-mode .btn-secondary {
+    border: 1px solid #cbd5e1;
+    color: #334155; /* Dark grey text for "Contact Me" */
+    background-color: #ffffff;
+}
+
+body.light-mode .btn-secondary:hover {
+    background-color: #f8fafc;
+    border-color: #94a3b8;
+}
+
+body.light-mode .btn-secondary i {
+    color: #334155; /* Makes the mail icon inside Contact Me dark */
+}
+
+body.light-mode .social-icons a {
+    color: #475569; /* Darker color for GitHub link text */
+}
+
+body.light-mode .social-icons a:hover {
+    color: #0284c7; /* Turns blue on hover */
+}
+body.light-mode .theme-btn {
+    color: #1e293b; /* Makes the moon icon dark slate/black in light mode */
+}
+body.light-mode .profile-circle {
+    border: 4px solid #053176; /* Changes profile border to dark slate/black in light mode */
+    box-shadow: 0 10px 25px rgba(119, 71, 71, 0.1); /* Adds a smooth dark shadow */
+}
+/* Light Mode Fixes for Contact Section */
+body.light-mode .contact-info-card h3, 
+body.light-mode .contact-form-card h3,
+body.light-mode .contact-item h4 {
+    color: #0f172a;
+}
+
+body.light-mode .contact-desc,
+body.light-mode .contact-item p,
+body.light-mode .form-group label {
+    color: #475569;
+}
+
+body.light-mode .form-group input, 
+body.light-mode .form-group textarea {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
+}
+
+body.light-mode .form-group input:focus, 
+body.light-mode .form-group textarea:focus {
+    border-color: #0284c7;
+}
+
+body.light-mode .icon-box {
+    background-color: rgba(2, 132, 199, 0.1);
+    color: #0284c7;
+}
+body.light-mode .social-icons a {
+    color: #475569;
+}
+
+body.light-mode .social-icons a:hover {
+    color: #0284c7;
+}
+body.light-mode .contact-divider {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .contact-follow h4 {
+    color: #0f172a;
+}
+
+body.light-mode .follow-icons a {
+    color: #64748b;
+}
+
+body.light-mode .follow-icons a:hover {
+    color: #0284c7;
+}
+body.light-mode .skills-grid h3 {
+    color: #0f172a; /* Turns the heading to a beautiful dark color in light mode */
+}
+
+body.light-mode .skills-grid h3 i {
+    color: #0284c7; /* Turns the code icons to a professional blue color */
+}
+/* --- LIGHT MODE COMPATIBILITY --- */
+body.light-mode .project-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+body.light-mode .project-image-container {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+body.light-mode .project-info h3 {
+    color: #0f172a;
+}
+body.light-mode .project-info p {
+    color: #64748b;
+}
+body.light-mode .github-icon-link {
+    color: #64748b;
+}
+body.light-mode .github-icon-link:hover {
+    color: #0284c7;
+}
